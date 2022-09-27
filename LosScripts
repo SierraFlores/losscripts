@@ -1,4 +1,4 @@
-local windows =  {}
+ local windows =  {}
 
 local UIClosed = -0.4, 0,0.271, 0
 local UIOpened = 0.0109783234, 0, 0.191451475, 0
@@ -15,7 +15,7 @@ function windows:Create(options)
     local GameName = options.Game
     game.StarterGui:SetCore("SendNotification", {
         Title = title,
-        Text = "Welcome To "..title.." "..game.Players.LocalPlayer.DisplayName.." AKA "..game.Players.LocalPlayer.Name.."!",
+        Text = "Welcome To "..title.." " ..game.Players.LocalPlayer.DisplayName.." AKA "..game.Players.LocalPlayer.Name.."!",
         Duration = 5,
         Logo = "rbxassetid://7072724538",
     })
