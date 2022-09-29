@@ -1,0 +1,156 @@
+getgenv().auto1 = false;
+getgenv().auto2 = false;
+getgenv().auto3 = false;
+getgenv().auto4 = false;
+getgenv().auto5 = false;
+getgenv().auto6 = false;
+getgenv().auto7 = false;
+getgenv().auto8 = false;
+getgenv().auto9 = false;
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
+
+function GummyBearTycoon()
+    local MainUI = UILibrary.Load("LosScripts")
+    local FirstPage = MainUI.AddPage("Main")
+    local SecondPage = MainUI.AddPage("Admin")
+
+    --local FirstLabel = FirstPage.AddLabel("Section 1")
+    local FirstButton = SecondPage.AddButton("SimpleSpy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
+    end)
+    local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoCollect", false, function(Value)
+		getgenv().auto1 = Value
+		print('AutoCollect Is: ', Value);
+		if Value then
+			doTap();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoDeposit", false, function(Value)
+		getgenv().auto2 = Value
+		print('AutoDeposit Is: ', Value);
+		if Value then
+			doTap2();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoSpawners", false, function(Value)
+		getgenv().auto3 = Value
+		print('AutoSpawners Is: ', Value);
+		if Value then
+			doTap3();
+		end
+    end)    
+    local FirstToggle = FirstPage.AddToggle("AutoUpgrade", false, function(Value)
+		getgenv().auto4 = Value
+		print('AutoUpgrade Is: ', Value);
+		if Value then
+			doTap4();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoCannonUpgrade", false, function(Value)
+		getgenv().auto5 = Value
+		print('AutoCannonUpgrade Is: ', Value);
+		if Value then
+			doTap5();
+		end
+    end)
+    local FirstSlider = FirstPage.AddSlider("Speed", {Min = 0, Max = 500, Def = 50}, function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end)
+    --local FirstPicker = FirstPage.AddColourPicker("Hello", "white", function(Value)
+    --print(Value)
+    --end)
+    --local FirstDropdown = FirstPage.AddDropdown("Hello", {
+    --"Hello",
+    --"Goodbye"
+    --}, function(Value)
+    --print(Value)
+    --end)
+
+    function doTap()
+		spawn(function()
+			while getgenv().auto1 == true do
+				local args = {
+					[1] = 5
+				}
+				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
+				local args = {
+					[1] = 25
+				}
+				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
+				local args = {
+					[1] = 1
+				}
+				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
+				local args = {
+					[1] = 100
+				}
+				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
+				wait()
+			end
+		end)
+	end
+	
+	function doTap2()
+		spawn(function()
+			while getgenv().auto2 == true do
+				game:GetService("ReplicatedStorage").Events.Tycoon.DepositGummies:FireServer()
+				wait()
+			end
+		end)
+	end
+	
+	function doTap3()
+		spawn(function()
+			while getgenv().auto3 == true do
+				local args = {
+					[1] = 1
+				}
+
+				game:GetService("ReplicatedStorage").Events.Tycoon.BuySpawners:InvokeServer(unpack(args))
+				wait()
+			end
+		end)
+	end	
+
+	function doTap4()
+		spawn(function()
+			while getgenv().auto4 == true do
+				game:GetService("ReplicatedStorage").Events.Tycoon.UpgradeSpawners:FireServer()
+				wait()
+			end
+		end)
+	end	
+	
+	function doTap5()
+		spawn(function()
+			while getgenv().auto5 == true do
+				local args = {
+					[1] = 1
+				}
+
+				game:GetService("ReplicatedStorage").Events.Tycoon.BuyCannonUpgrades:InvokeServer(unpack(args))							
+				wait()
+			end
+		end)
+	end	
+	function doTap6()
+		spawn(function()
+			while getgenv().auto6 == true do
+				local args = {
+					[1] = "gacha_one",
+					[2] = {
+						["1"] = 7
+					}
+				}
+
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+				wait()
+			end
+		end)
+	end	
+end
+
+GummyBearTycoon()
