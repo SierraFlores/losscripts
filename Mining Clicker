@@ -1,0 +1,68 @@
+getgenv().auto7 = false;
+getgenv().auto8 = false;
+getgenv().auto9 = false;
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
+
+function MiningClicker()
+    local MainUI = UILibrary.Load("LosScripts")
+    local FirstPage = MainUI.AddPage("Main")
+    local SecondPage = MainUI.AddPage("Admin")
+
+    --local FirstLabel = FirstPage.AddLabel("Section 1")
+    local FirstButton = SecondPage.AddButton("SimpleSpy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
+    end)
+    local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoHit", false, function(Value)
+		getgenv().auto7 = Value
+		print('AutoHit Is: ', Value);
+		if Value then
+			doTap7();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoRebirth", false, function(Value)
+		getgenv().auto8 = Value
+		print('AutoRebirth Is: ', Value);
+		if Value then
+			doTap8();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoEgg", false, function(Value)
+		getgenv().auto9 = Value
+		print('AutoEgg Is: ', Value);
+		if Value then
+			doTap9();
+		end
+    end)
+    function doTap7()
+		spawn(function()
+			while getgenv().auto7 == true do
+				game:GetService("ReplicatedStorage").Remotes.Click:InvokeServer()										
+				wait()
+			end
+		end)
+	end
+	 function doTap8()
+		spawn(function()
+			while getgenv().auto8 == true do
+				game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()										
+				wait()
+			end
+		end)
+	end
+	 function doTap9()
+		spawn(function()
+			while getgenv().auto9 == true do
+				local args = {
+					[1] = "Fart Egg",
+					[2] = 1
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.buyEgg:InvokeServer(unpack(args))																		
+				wait()
+			end
+		end)
+	end
+end
