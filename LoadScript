@@ -1,0 +1,19 @@
+repeat wait() until game:IsLoaded()
+
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+
+local rs = "https://raw.githubusercontent.com/lostooraw/losscripts/main/"
+
+local games = {
+    [10635076883] = "GummyBearTycoon",
+    [8884334497] = "Mining%20Clicker",
+    [10631181587] = "StoneMiner",
+}
+
+for i, v in pairs(games) do
+    if i == game.PlaceId or i == game.GameId then
+        loadstring(game:HttpGet(rs .. v))()
+    end
+end
