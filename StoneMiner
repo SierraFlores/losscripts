@@ -1,0 +1,18 @@
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
+
+function StoneMiner()
+	local MainUI = UILibrary.Load("LosScripts")
+    local FirstPage = MainUI.AddPage("Main")
+    local SecondPage = MainUI.AddPage("Admin")
+
+    --local FirstLabel = FirstPage.AddLabel("Section 1")
+    local FirstButton = SecondPage.AddButton("SimpleSpy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
+    end)
+    local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
+    end)
+    local FirstSlider = FirstPage.AddSlider("Speed", {Min = 0, Max = 500, Def = 50}, function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end)
+end
