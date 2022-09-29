@@ -4,9 +4,6 @@ getgenv().auto3 = false;
 getgenv().auto4 = false;
 getgenv().auto5 = false;
 getgenv().auto6 = false;
-getgenv().auto7 = false;
-getgenv().auto8 = false;
-getgenv().auto9 = false;
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
 
 function GummyBearTycoon()
