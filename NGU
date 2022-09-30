@@ -1,0 +1,281 @@
+getgenv().auto1 = false;
+getgenv().auto2 = false;
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
+
+function NGU()
+    local MainUI = UILibrary.Load("LosScripts")
+    local FirstPage = MainUI.AddPage("Main")
+    local SecondPage = MainUI.AddPage("Admin")
+
+    --local FirstLabel = FirstPage.AddLabel("Section 1")
+    local FirstButton = SecondPage.AddButton("SimpleSpy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
+    end)
+    local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoUpgrade", false, function(Value)
+		getgenv().auto1 = Value
+		print('AutoUpgrade Is: ', Value);
+		if Value then
+			doTap1();
+		end
+    end)
+    local FirstToggle = FirstPage.AddToggle("AutoFeed", false, function(Value)
+		getgenv().auto2 = Value
+		print('AutoFeed Is: ', Value);
+		if Value then
+			doTap2();
+		end
+    end)
+    function doTap1()
+		spawn(function()
+			while getgenv().auto1 == true do
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 10
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))	
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 11
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 12
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 13
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 14
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 15
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 16
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 17
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 18
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 19
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 28
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 20
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 21
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 22
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 23
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 24
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 25
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 26
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))														
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 29
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 30
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 31
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 32
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 33
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 34
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 35
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 36
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 37
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 38
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 39
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+					[1] = {
+						[1] = "Upgrade_Request",
+						[2] = 40
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				wait()
+			end
+		end)
+	end
+	 function doTap8()
+		spawn(function()
+			while getgenv().auto2 == true do
+				local args = {
+					[1] = {
+						[1] = "PetFeed_Request",
+						[2] = 1
+					}
+				}
+
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))		
+				local args = {
+					[1] = {
+						[1] = "PetFeed_Request",
+						[2] = 2
+					}
+				}
+
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))	
+				local args = {
+					[1] = {
+						[1] = "PetFeed_Request",
+						[2] = 3
+					}
+				}
+
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))							
+				wait()
+			end
+		end)
+	end
+end
+
+NGU()
