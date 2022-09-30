@@ -245,7 +245,7 @@ function NGU()
 			end
 		end)
 	end
-	 function doTap8()
+	 function doTap2()
 		spawn(function()
 			while getgenv().auto2 == true do
 				local args = {
