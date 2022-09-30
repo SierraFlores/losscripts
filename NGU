@@ -271,7 +271,14 @@ function NGU()
 					}
 				}
 
-				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))							
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				local args = {
+				    [1] = {
+					[1] = "HouseUpgrade_Request"
+				    }
+				}
+
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 				wait()
 			end
 		end)
