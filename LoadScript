@@ -10,6 +10,7 @@ local games = {
     [10635076883] = "GummyBearTycoon",
     [8884334497] = "Mining%20Clicker",
     [10631181587] = "StoneMiner",
+    [9852765074] = "StoneMiner",
     [4983006874] = "NGU",
 }
 
