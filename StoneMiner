@@ -15,6 +15,9 @@ function StoneMiner()
     local FirstSlider = FirstPage.AddSlider("Speed", {Min = 0, Max = 500, Def = 50}, function(Value)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
     end)
+    local FirstSlider = FirstPage.AddSlider("JumpHeight", {Min = 0, Max = 500, Def = 50}, function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end)
 end
 
 StoneMiner()
