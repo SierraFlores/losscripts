@@ -13,6 +13,7 @@ local games = {
     [9852765074] = "StoneMiner",
     [4983006874] = "NGU",
     [8864518888] = "StoneMiner",
+    [10069260094] = "StoneMiner",
 }
 
 for i, v in pairs(games) do
