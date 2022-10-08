@@ -1,3 +1,4 @@
+getgenv().auto7 = false;
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
 
 function StoneMiner()
@@ -24,6 +25,20 @@ function StoneMiner()
     local FirstSlider = FirstPage.AddSlider("JumpHeight", {Min = 0, Max = 500, Def = 50}, function(Value)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
     end)
+    	 function doTap7()
+		spawn(function()
+			while getgenv().auto7 == true do
+				local args = {
+				    [1] = {
+					[1] = "QQXySgUq3g"
+				    }
+				}
+
+				game:GetService("ReplicatedStorage").Game.Events.CollectOrbs:FireServer(unpack(args))
+				wait()
+			end
+		end)
+	end
 end
 
 StoneMiner()
