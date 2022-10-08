@@ -12,6 +12,12 @@ function StoneMiner()
     local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
     end)
+    local FirstToggle = FirstPage.AddToggle("AutoHit", false, function(Value)
+	getgenv().auto7 = Value
+	print('AutoHit Is: ', Value);
+	if Value then
+		doTap7();
+	end  
     local FirstSlider = FirstPage.AddSlider("Speed", {Min = 0, Max = 500, Def = 50}, function(Value)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
     end)
