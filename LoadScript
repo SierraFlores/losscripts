@@ -12,6 +12,7 @@ local games = {
     [10631181587] = "StoneMiner",
     [9852765074] = "StoneMiner",
     [4983006874] = "NGU",
+    [8864518888] = "StoneMiner",
 }
 
 for i, v in pairs(games) do
@@ -20,8 +21,3 @@ for i, v in pairs(games) do
     end
 end
 
-for i, v in pairs(games) do
-    if i = game.PlaceId or i = game.GameId then
-        loadstring(game:HttpGet(https://raw.githubusercontent.com/lostooraw/losscripts/main/StoneMiner))()
-    end
-end
