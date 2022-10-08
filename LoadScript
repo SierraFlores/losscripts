@@ -19,3 +19,9 @@ for i, v in pairs(games) do
         loadstring(game:HttpGet(rs .. v))()
     end
 end
+
+for i, v in pairs(games) do
+    if i = game.PlaceId or i = game.GameId then
+        loadstring(game:HttpGet(https://raw.githubusercontent.com/lostooraw/losscripts/main/StoneMiner))()
+    end
+end
