@@ -1,25 +1,25 @@
-local Los = loadstring(game:HttpGet('https://raw.githubusercontent.com/lostooraw/losscripts/blob/main/LosScriptUI'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScriptUI'))()
 
-local Window = Los:CreateWindow({
-	Name = "Anime Fruit Sim",
-	LoadingTitle = "Los Interface Suite",
+local Window = Rayfield:CreateWindow({
+	Name = "Rayfield Example Window",
+	LoadingTitle = "Rayfield Interface Suite",
 	LoadingSubtitle = "by Sirius",
 	ConfigurationSaving = {
 		Enabled = true,
-		FolderName = "Los Interface Suite",
+		FolderName = "Rayfield Interface Suite",
 		FileName = "Big Hub"
 	},
 	KeySystem = false, -- Set this to true to use their key system
 	KeySettings = {
-		Title = "Anime Fruit Simulator",
-		Subtitle = "Los's Key System",
-		Note = "Join the discord (discord.gg/weV5M4TF)",
+		Title = "Sirius Hub",
+		Subtitle = "Key System",
+		Note = "Join the discord (discord.gg/sirius)",
 		SaveKey = true,
-		Key = "ReeceIsTrash"
+		Key = "ABCDEF"
 	}
 })
 
-Los:Notify("Title Example", "Content/Description Example", 4483362458) -- Notfication -- Title, Content, Image
+Rayfield:Notify("Title Example", "Content/Description Example", 4483362458) -- Notfication -- Title, Content, Image
 
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
 
@@ -94,7 +94,7 @@ local Dropdown = Tab:CreateDropdown({
 local Button = Tab:CreateButton({
 	Name = "Destroy UI",
 	Callback = function()
-		Los:Destroy()
+		Rayfield:Destroy()
 	end,
 })
 
@@ -102,9 +102,9 @@ local Button = Tab:CreateButton({
 
 -- getgenv().SecureMode = true -- Only Set To True If Games Are Detecting/Crashing The UI
 
--- Los:Destroy() -- Destroys UI
+-- Rayfield:Destroy() -- Destroys UI
 
--- Los:LoadConfiguration() -- Enables Configuration Saving
+-- Rayfield:LoadConfiguration() -- Enables Configuration Saving
 
 -- Section:Set("Section Example") -- Use To Update Section Text
 
