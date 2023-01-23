@@ -1,153 +1,123 @@
-getgenv().auto1 = false;
-getgenv().auto2 = false;
-getgenv().auto3 = false;
-getgenv().auto4 = false;
-getgenv().auto5 = false;
-getgenv().auto6 = false;
-local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/losscripts/main/LosScripts2"))()
+local Los = loadstring(game:HttpGet('https://github.com/lostooraw/losscripts/blob/main/LosScriptUI'))()
 
-function GummyBearTycoon()
-    local MainUI = UILibrary.Load("LosScripts")
-    local FirstPage = MainUI.AddPage("Main")
-    local SecondPage = MainUI.AddPage("Admin")
+local Window = Los:CreateWindow({
+	Name = "Anime Fruit Sim",
+	LoadingTitle = "Los Interface Suite",
+	LoadingSubtitle = "by Sirius",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = "Los Interface Suite",
+		FileName = "Big Hub"
+	},
+	KeySystem = false, -- Set this to true to use their key system
+	KeySettings = {
+		Title = "Anime Fruit Simulator",
+		Subtitle = "Los's Key System",
+		Note = "Join the discord (discord.gg/weV5M4TF)",
+		SaveKey = true,
+		Key = "ReeceIsTrash"
+	}
+})
 
-    --local FirstLabel = FirstPage.AddLabel("Section 1")
-    local FirstButton = SecondPage.AddButton("SimpleSpy", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
-    end)
-    local FirstButton = SecondPage.AddButton("InfiniteYeild", function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
-    end)
-    local FirstToggle = FirstPage.AddToggle("AutoCollect", false, function(Value)
-		getgenv().auto1 = Value
-		print('AutoCollect Is: ', Value);
-		if Value then
-			doTap();
-		end
-    end)
-    local FirstToggle = FirstPage.AddToggle("AutoDeposit", false, function(Value)
-		getgenv().auto2 = Value
-		print('AutoDeposit Is: ', Value);
-		if Value then
-			doTap2();
-		end
-    end)
-    local FirstToggle = FirstPage.AddToggle("AutoSpawners", false, function(Value)
-		getgenv().auto3 = Value
-		print('AutoSpawners Is: ', Value);
-		if Value then
-			doTap3();
-		end
-    end)    
-    local FirstToggle = FirstPage.AddToggle("AutoUpgrade", false, function(Value)
-		getgenv().auto4 = Value
-		print('AutoUpgrade Is: ', Value);
-		if Value then
-			doTap4();
-		end
-    end)
-    local FirstToggle = FirstPage.AddToggle("AutoCannonUpgrade", false, function(Value)
-		getgenv().auto5 = Value
-		print('AutoCannonUpgrade Is: ', Value);
-		if Value then
-			doTap5();
-		end
-    end)
-    local FirstSlider = FirstPage.AddSlider("Speed", {Min = 0, Max = 500, Def = 50}, function(Value)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-    end)
-    --local FirstPicker = FirstPage.AddColourPicker("Hello", "white", function(Value)
-    --print(Value)
-    --end)
-    --local FirstDropdown = FirstPage.AddDropdown("Hello", {
-    --"Hello",
-    --"Goodbye"
-    --}, function(Value)
-    --print(Value)
-    --end)
+Los:Notify("Title Example", "Content/Description Example", 4483362458) -- Notfication -- Title, Content, Image
 
-    function doTap()
-		spawn(function()
-			while getgenv().auto1 == true do
-				local args = {
-					[1] = 5
-				}
-				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
-				local args = {
-					[1] = 25
-				}
-				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
-				local args = {
-					[1] = 1
-				}
-				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
-				local args = {
-					[1] = 100
-				}
-				game:GetService("ReplicatedStorage").Events.Tycoon.CollectGummy:FireServer(unpack(args))
-				wait()
-			end
-		end)
-	end
-	
-	function doTap2()
-		spawn(function()
-			while getgenv().auto2 == true do
-				game:GetService("ReplicatedStorage").Events.Tycoon.DepositGummies:FireServer()
-				wait()
-			end
-		end)
-	end
-	
-	function doTap3()
-		spawn(function()
-			while getgenv().auto3 == true do
-				local args = {
-					[1] = 1
-				}
+local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
 
-				game:GetService("ReplicatedStorage").Events.Tycoon.BuySpawners:InvokeServer(unpack(args))
-				wait()
-			end
-		end)
-	end	
+local Section = Tab:CreateSection("Section Example")
 
-	function doTap4()
-		spawn(function()
-			while getgenv().auto4 == true do
-				game:GetService("ReplicatedStorage").Events.Tycoon.UpgradeSpawners:FireServer()
-				wait()
-			end
-		end)
-	end	
-	
-	function doTap5()
-		spawn(function()
-			while getgenv().auto5 == true do
-				local args = {
-					[1] = 1
-				}
+local Button = Tab:CreateButton({
+	Name = "Button Example",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+	end,
+})
 
-				game:GetService("ReplicatedStorage").Events.Tycoon.BuyCannonUpgrades:InvokeServer(unpack(args))							
-				wait()
-			end
-		end)
-	end	
-	function doTap6()
-		spawn(function()
-			while getgenv().auto6 == true do
-				local args = {
-					[1] = "gacha_one",
-					[2] = {
-						["1"] = 7
-					}
-				}
+local Toggle = Tab:CreateToggle({
+	Name = "Toggle Example",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+    		-- The variable (Value) is a boolean on whether the toggle is true or false
+	end,
+})
 
-				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-				wait()
-			end
-		end)
-	end	
-end
+local Slider = Tab:CreateSlider({
+	Name = "Slider Example",
+	Range = {0, 100},
+	Increment = 10,
+	Suffix = "Bananas",
+	CurrentValue = 10,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the slider changes
+    		-- The variable (Value) is a number which correlates to the value the slider is currently at
+	end,
+})
 
-GummyBearTycoon()
+local Label = Tab:CreateLabel("Label Example")
+
+local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
+
+local Input = Tab:CreateInput({
+	Name = "Input Example",
+	PlaceholderText = "Input Placeholder",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		-- The function that takes place when the input is changed
+    		-- The variable (Text) is a string for the value in the text box
+	end,
+})
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Keybind Example",
+	CurrentKeybind = "Q",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		-- The function that takes place when the keybind is pressed
+    		-- The variable (Keybind) is a boolean for whether the keybind is being held or not (HoldToInteract needs to be true)
+	end,
+})
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Dropdown Example",
+	Options = {"Option 1","Option 2"},
+	CurrentOption = "Option 1",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  -- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Destroy UI",
+	Callback = function()
+		Los:Destroy()
+	end,
+})
+
+-- Extras
+
+-- getgenv().SecureMode = true -- Only Set To True If Games Are Detecting/Crashing The UI
+
+-- Los:Destroy() -- Destroys UI
+
+-- Los:LoadConfiguration() -- Enables Configuration Saving
+
+-- Section:Set("Section Example") -- Use To Update Section Text
+
+-- Button:Set("Button Example") -- Use To Update Button Text
+
+-- Toggle:Set(false) -- Use To Update Toggle
+
+-- Slider:Set(10) -- Use To Update Slider Value
+
+-- Label:Set("Label Example") -- Use To Update Label Text
+
+-- Paragraph:Set({Title = "Paragraph Example", Content = "Paragraph Example"}) -- Use To Update Paragraph Text
+
+-- Keybind:Set("RightCtrl") -- Keybind (string) -- Use To Update Keybind
+
+-- Dropdown:Set("Option 2") -- The new option value -- Use To Update/Set New Dropdowns
