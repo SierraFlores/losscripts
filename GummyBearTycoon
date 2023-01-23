@@ -1,4 +1,4 @@
-local Los = loadstring(game:HttpGet('https://github.com/lostooraw/losscripts/blob/main/LosScriptUI'))()
+local Los = loadstring(game:HttpGet('https://raw.githubusercontent.com/lostooraw/losscripts/blob/main/LosScriptUI'))()
 
 local Window = Los:CreateWindow({
 	Name = "Anime Fruit Sim",
