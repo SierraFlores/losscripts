@@ -41,7 +41,6 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
-Rayfield:Notify("Title Example", "Content/Description Example", 4483362458) -- Notfication -- Title, Content, Image
 
 local Tab = Window:CreateTab("AutoFarm", 4483362458) -- Title, Image
 
@@ -150,7 +149,7 @@ local Toggle = Tab:CreateToggle({
 
 
 
-local Dupe = Window:CreateTab("Duplicate Items", 4483362458) -- Title, Image
+local Dupe = Window:CreateTab("Duplicate Items", 4483362458) 
 local Section = Dupe:CreateSection("PetDupe (Enequip To Work)")
 local PetsDupe;
 local PetsAmmount;
@@ -160,7 +159,7 @@ Dupe:CreateSlider({
 	Increment = 1,
 	Suffix = "Items",
 	CurrentValue = 1,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Slider1",
 	Callback = function(Value)
 		PetsAmmount = Value
 		print(Value)
@@ -215,7 +214,7 @@ Dupe:CreateSlider({
 	Increment = 1,
 	Suffix = "Items",
 	CurrentValue = 1,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Slider1",
 	Callback = function(Value)
 		SwordAmmount = Value
 		print(Value)
@@ -269,7 +268,7 @@ Dupe:CreateSlider({
 	Increment = 1,
 	Suffix = "Items",
 	CurrentValue = 1,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Slider1", 
 	Callback = function(Value)
 		FruitAmmount = Value
 		print(Value)
@@ -312,7 +311,7 @@ Dupe:CreateButton({
 
 
 
-local Dupe2 = Window:CreateTab("InfinitePetsEquipped", 4483362458) -- Title, Image
+local Dupe2 = Window:CreateTab("InfinitePetsEquipped", 4483362458) 
 local Section = Dupe2:CreateSection("InfinitePetsEquipped (Have Atleast 1 Pet Equipped)")
 local EquipDupe;
 local EquipAmmount;
@@ -322,7 +321,7 @@ Dupe2:CreateSlider({
 	Increment = 1,
 	Suffix = "Pets",
 	CurrentValue = 1,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Slider1",
 	Callback = function(Value)
 		EquipAmmount = Value
 		print(Value)
@@ -357,3 +356,29 @@ Dupe2:CreateButton({
     end,
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+local Misc = Window:CreateTab("Misc", 4483362458)
+local Section = Misc:CreateSection("Miscellaneous")
+local Button = Misc:CreateButton({
+	Name = "SimpleSpy",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
+	end,
+})
+local Button = Misc:CreateButton({
+	Name = "InfiniteYield",
+	Callback = function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
+	end,
+})
