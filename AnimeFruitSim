@@ -6,8 +6,13 @@ local PetsInv = game:GetService("Players").Louisiana_hotspot.Inventory.Pets:GetC
 local PetsInvTable = {}
 local EquipInv = game:GetService("Players").Louisiana_hotspot.Inventory.EquippedPets:GetChildren()
 local EquipInvTable = {}
+local Eggs = game:GetService("Workspace").Maps.Eggs:GetChildren()
+local EggsTable = {}
 
 
+for i,v in pairs(Eggs) do
+	table.insert(EggsTable, v.Name)
+end
 for i,v in pairs(FruitInv) do
 	table.insert(FruitInvTable, v.Name)
 end
@@ -141,6 +146,80 @@ local Toggle = Tab:CreateToggle({
  
 
 
+
+
+
+
+
+
+
+local Open = Window:CreateTab("AutoOpen", 4483362458) -- Title, Image
+local Section = Open:CreateSection("AutoOpenPets")
+local PetsOpen;
+Open:CreateDropdown({
+    Name = "Choose Egg To Open",
+    Options = EggsTable,
+    CurrentOption = "Option 1",
+    Flag = "Dropdown1",
+    Callback = function(Option)
+        PetsOpen = Option
+		print(Option)
+    end
+})
+
+Open:CreateToggle({
+	Name = "AutoEgg 1x",
+	CurrentValue = false,
+	Flag = "Toggle1", 
+	Callback = function(Value)
+		local args = {
+			[1] = (PetsOpen),
+			[2] = "HatchBtn"
+		}
+		
+		game:GetService("ReplicatedStorage").Remotes.Egg:FireServer(unpack(args))
+	end,
+})
+Open:CreateToggle({
+	Name = "AutoEgg 3x",
+	CurrentValue = false,
+	Flag = "Toggle1", 
+	Callback = function(Value)
+		local args = {
+			[1] = (PetsOpen),
+			[2] = "TrippleBtn"
+		}
+		
+		game:GetService("ReplicatedStorage").Remotes.Egg:FireServer(unpack(args))
+	end,
+})
+local Section = Open:CreateSection("AutoSpin")
+Open:CreateToggle({
+	Name = "Auto Spin 1x",
+	CurrentValue = false,
+	Flag = "Toggle1", 
+	Callback = function(Value)
+		local args = {
+			[1] = "FruitEgg",
+			[2] = "HatchBtn"
+		}
+		
+		game:GetService("ReplicatedStorage").Remotes.Egg:FireServer(unpack(args))
+	end,
+})
+Open:CreateToggle({
+	Name = "Auto Spin 3x",
+	CurrentValue = false,
+	Flag = "Toggle1", 
+	Callback = function(Value)
+		local args = {
+			[1] = "FruitEgg",
+			[2] = "TrippleBtn"
+		}
+		
+		game:GetService("ReplicatedStorage").Remotes.Egg:FireServer(unpack(args))
+	end,
+})
 
 
 
@@ -370,13 +449,13 @@ Dupe2:CreateButton({
 
 local Misc = Window:CreateTab("Misc", 4483362458)
 local Section = Misc:CreateSection("Miscellaneous")
-local Button = Misc:CreateButton({
+Misc:CreateButton({
 	Name = "SimpleSpy",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/lostooraw/SimpleSpy/main/simplespy"))()
 	end,
 })
-local Button = Misc:CreateButton({
+Misc:CreateButton({
 	Name = "InfiniteYield",
 	Callback = function()
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()	
